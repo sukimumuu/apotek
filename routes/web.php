@@ -15,8 +15,14 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+// LOGIN REGISTER
 Route::get('/', [AuthController::class,'login'])->name('login');
+Route::get('/register', [AuthController::class,'register'])->name('register');
 Route::post('/login-load', [AuthController::class,'login_load'])->name('login-load');
-Route::middleware(['auth','level:admin,user '])->group(function () {
+Route::post('/regis-load', [AuthController::class,'store_data_regis'])->name('regis-load');
+
+// MIDDLEWARE
+Route::middleware(['auth'])->group(function () {
+    Route::get('/logout', [AuthController::class,'logout']);
     Route::get('/index', [HomeController::class,'index'])->name('index');
 });

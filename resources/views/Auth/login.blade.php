@@ -36,7 +36,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password" name="password">
+          <input type="password" class="form-control" placeholder="Kata sandi" name="password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -74,7 +74,7 @@
         <a href="forgot-password.html">Lupa kata sandi</a>
       </p>
       <p class="mb-0">
-        <a href="register.html" class="text-center">Daftar akun</a>
+        <a href="{{ route('register') }}" class="text-center">Daftar akun</a>
       </p>
     </div>
     <!-- /.card-body -->
