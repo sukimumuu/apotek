@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PasienController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,7 @@ Route::post('/regis-load', [AuthController::class,'store_data_regis'])->name('re
 Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [AuthController::class,'logout']);
     Route::get('/index', [HomeController::class,'index'])->name('index');
+    Route::get('/pasien', [PasienController::class,'index'])->name('index-pasien');
+    Route::get('/pasien-add', [PasienController::class,'create'])->name('add-pasien');
+    Route::post('/pasien-store', [PasienController::class,'store_data'])->name('store-pasien');
 });
