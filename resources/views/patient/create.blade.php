@@ -55,14 +55,14 @@
                   <input type="text" id="inputName" class="form-control" name="phone">
                 </div>
                 <div class="form-group">
-                  <label for="inputStatus">Jenis Keperluan</label>
-                  <select id="inputStatus" class="form-control custom-select" name="order_type">
+                  <label for="orderType">Jenis Keperluan</label>
+                  <select id="orderType" class="form-control custom-select" name="order_type" onchange="toggleElement()">
                     <option selected disabled>Pilih Keperluan</option>
                     <option value="consult">Periksa Dokter</option>
                     <option value="only_buy">Hanya Membeli Obat</option>
                   </select>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="additionalInfo" style="display: none;">
                   <label for="inputStatus">Resep Dokter</label>
                   <select id="inputStatus" class="form-control custom-select" name="recepts">
                     <option selected disabled>Pilih Keterangan</option>
@@ -86,4 +86,17 @@
     </form>
     </section>
 
+     <script>
+        function toggleElement() {
+            var orderTypeSelect = document.getElementById('orderType');
+            var additionalInfoDiv = document.getElementById('additionalInfo');
+
+            // Menampilkan atau menyembunyikan elemen tambahan berdasarkan nilai terpilih
+            if (orderTypeSelect.value === 'only_buy') {
+                additionalInfoDiv.style.display = 'block'; // Menampilkan elemen
+            } else {
+                additionalInfoDiv.style.display = 'none'; // Menyembunyikan elemen
+            }
+        }
+    </script>
 @endsection

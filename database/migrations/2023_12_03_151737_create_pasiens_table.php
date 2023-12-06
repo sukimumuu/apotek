@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('age');
             $table->integer('phone')->nullable();
             $table->enum('order_type', ['consult','only_buy']);
-            $table->enum('recepts', ['yes','no']);
+            $table->enum('recepts', ['yes','no','undefined'])->default('undefined');
             $table->timestamps();
         });
     }
