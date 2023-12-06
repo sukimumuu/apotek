@@ -33,4 +33,10 @@ class PasienController extends Controller
         return redirect()->route('index-pasien');
 
     }
+
+    public function destroy($id){
+        $data = Pasien::find($id);
+        $data->delete();
+        return redirect()->route('index-pasien');
+    }
 }

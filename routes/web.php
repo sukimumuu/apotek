@@ -29,4 +29,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/pasien', [PasienController::class,'index'])->name('index-pasien');
     Route::get('/pasien-add', [PasienController::class,'create'])->name('add-pasien');
     Route::post('/pasien-store', [PasienController::class,'store_data'])->name('store-pasien');
+    Route::get('/pasien-delete/{id}', [PasienController::class,'destroy'])->name('delete-pasien');
 });

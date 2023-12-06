@@ -72,6 +72,9 @@
                                     {{ $item->recepts }}
                                 @endif
                             </td>
+                            <td>
+                              <a href="/pasien-delete/{{ $item->id }}"><i class="fas fa-trash text-danger"></i></a>
+                            </td>
                         </tr>
                     @endforeach
                     
