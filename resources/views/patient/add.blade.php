@@ -73,7 +73,7 @@
                                 @endif
                             </td>
                             <td>
-                              <a href="/pasien-delete/{{ $item->id }}"><i class="fas fa-trash text-danger"></i></a>
+                              <button onclick="konfirmasiHapus()"><a href="/pasien-delete/{{ $item->id }}"><i class="fas fa-trash text-danger"></i></a></button>
                             </td>
                         </tr>
                     @endforeach
@@ -86,4 +86,20 @@
             <!-- /.card -->
           </div>
         </div>
+
+        <script>
+          function konfirmasiHapus() {
+              // Menampilkan kotak dialog konfirmasi
+              var konfirmasi = confirm("Apakah Anda yakin ingin menghapus data ini?");
+
+              // Memeriksa apakah pengguna menekan tombol "OK"
+              if (konfirmasi) {
+                  // Lakukan aksi penghapusan di sini
+                  alert("Data berhasil dihapus!");
+              } else {
+                  // Jika pengguna memilih "Batal"
+                  alert("Penghapusan dibatalkan.");
+              }
+          }
+        </script>
 @endsection
