@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('fullname');
             $table->enum('gender', ['male','female','undefined'])->default('undefined');
             $table->integer('age');
-            $table->integer('phone')->nullable();
+            $table->bigInteger('phone');
             $table->enum('order_type', ['consult','only_buy']);
             $table->enum('recepts', ['yes','no','undefined'])->default('undefined');
             $table->timestamps();

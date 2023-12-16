@@ -68,8 +68,8 @@
                                     Dengan resep
                                 @elseif($item->recepts === 'no')
                                     Tidak dengan resep
-                                @else
-                                    {{ $item->recepts }}
+                                @elseif($item->recepts == 'undefined')
+                                    -
                                 @endif
                             </td>
                             <td>

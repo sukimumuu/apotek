@@ -26,7 +26,9 @@ class PasienController extends Controller
             'fullname' => 'required|string|max:255',
             'gender' => 'required|string',
             'age' => 'required|integer',
+            'phone' => 'required|numeric',
             'order_type' => 'required|string',
+            'recepts' => 'string',
         ]);
 
         Pasien::create($validatedData);
