@@ -50,7 +50,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../../index2.html" class="nav-link">
+                <a href="{{ route('index-dokter') }}" class="nav-link">
                   <i class="fas fa-user-md"></i>
                   <p>Dokter jaga</p>
                 </a>

@@ -79,8 +79,8 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <a href="#" class="btn btn-secondary">Cancel</a>
-            <button type="submit" class="btn btn-success float-right">Create new Project</button>
+            <a href="{{ route('index-pasien') }}" class="btn btn-secondary">Batal</a>
+            <button type="submit" class="btn btn-success float-right">Kirim</button>
           </div>
         </div>
     </form>

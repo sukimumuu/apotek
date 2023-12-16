@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DokterController;
 use App\Http\Controllers\PasienController;
 
 /*
@@ -26,8 +27,14 @@ Route::post('/regis-load', [AuthController::class,'store_data_regis'])->name('re
 Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [AuthController::class,'logout']);
     Route::get('/index', [HomeController::class,'index'])->name('index');
+    // PASIEN
     Route::get('/pasien', [PasienController::class,'index'])->name('index-pasien');
     Route::get('/pasien-add', [PasienController::class,'create'])->name('add-pasien');
     Route::post('/pasien-store', [PasienController::class,'store_data'])->name('store-pasien');
     Route::get('/pasien-delete/{id}', [PasienController::class,'destroy'])->name('delete-pasien');
+    // DOKTER
+    Route::get('/dokter', [DokterController::class,'index'])->name('index-dokter');
+    Route::get('/dokter-add', [DokterController::class,'create'])->name('add-dokter');
+    Route::post('/dokter-store', [DokterController::class,'store_data'])->name('store-dokter');
+    Route::get('/dokter-delete/{id}', [DokterController::class,'destroy'])->name('delete-dokter');
 });
